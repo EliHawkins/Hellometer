@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const OrderPaymentTimesChart = () => {
+const OrderPaymentTimesStats = () => {
   const [stats, setStats] = useState({});
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const OrderPaymentTimesChart = () => {
 
   return (
     <div>
-      <h2>Order and Payment Times Statistics</h2>
+      <h2>Order and Payment Times Across All Stores Statistics</h2>
       {stats.order_stats && (
         <ul>
           <li>Average Order Time: {stats.order_stats.average_order_time !== undefined ? stats.order_stats.average_order_time.toFixed(2) : 'N/A'}</li>
@@ -27,4 +27,4 @@ const OrderPaymentTimesChart = () => {
   );
 };
 
-export default OrderPaymentTimesChart;
+export default OrderPaymentTimesStats;

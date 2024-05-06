@@ -23,7 +23,7 @@ const AveragePaymentTimeByHourChart = () => {
         data: {
           labels: Object.keys(averagePaymentTimeByHour),
           datasets: [{
-            label: 'Average Payment Time by Hour of the Day',
+            label: 'Average Time Taken to Pay by Hour of the Day',
             data: Object.values(averagePaymentTimeByHour),
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
@@ -60,7 +60,7 @@ const AveragePaymentTimeByHourChart = () => {
 
   return (
     <div>
-      <h2>Average Payment Time by Hour of the Day Chart</h2>
+      <h2>Average Payment Time by Hour of the Day Across All Stores Chart</h2>
       <canvas id="averagePaymentTimeByHourChart" width="400" height="400"></canvas>
     </div>
   );

@@ -12,7 +12,7 @@ const TotalTimesStats = () => {
 
   return (
     <div>
-      <h2>Total Time Statistics</h2>
+      <h2>Total Time Taken By Customers Across All Stores Statistics</h2>
       <ul>
         <li>Average: {totalTimes.average !== undefined ? totalTimes.average.toFixed(2) : 'N/A'}</li>
         <li>Median: {totalTimes.median !== undefined ? totalTimes.average.toFixed(2) : 'N/A'}</li>

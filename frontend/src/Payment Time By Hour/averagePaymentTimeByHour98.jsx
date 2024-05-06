@@ -23,7 +23,7 @@ const AveragePaymentTimeByHourChart98 = () => {
         data: {
           labels: Object.keys(averagePaymentTimeByHour),
           datasets: [{
-            label: 'Average Payment Time by Hour of the Day',
+            label: 'Average Time Taken to Pay by Hour of the Day',
             data: Object.values(averagePaymentTimeByHour),
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',

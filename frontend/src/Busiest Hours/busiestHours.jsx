@@ -12,7 +12,7 @@ const BusiestHoursChart = () => {
 
   return (
     <div>
-      <h2>Busiest Hours of the Day</h2>
+      <h2>Busiest Hours of the Day Across All Stores</h2>
       <ul>
         {busiestHours.map(hour => (
           <li key={hour}>{`${hour}:00 - ${hour + 1}:00`}</li>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const OrderPaymentTimesChart28 = () => {
+const OrderPaymentTimesStats28 = () => {
   const [stats, setStats] = useState({});
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const OrderPaymentTimesChart28 = () => {
   );
 };
 
-export default OrderPaymentTimesChart28;
+export default OrderPaymentTimesStats28;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import WaitTimeChart from './Wait Time Stats/waitTime.jsx';
+import WaitTimeStatistics from './Wait Time Stats/waitTime.jsx';
 import WaitTimeStatistics27 from './Wait Time Stats/waitTime27.jsx';
 import WaitTimeStatistics28 from './Wait Time Stats/waitTime28.jsx';
 import WaitTimeStatistics97 from './Wait Time Stats/waitTime97.jsx';
@@ -11,12 +11,12 @@ import TotalTimesStats28 from './Total Times/totalTimes28.jsx';
 import TotalTimesStats97 from './Total Times/totalTimes97.jsx';
 import TotalTimesStats98 from './Total Times/totalTimes98.jsx';
 import TotalTimesStats99 from './Total Times/totalTimes99.jsx';
-import OrderPaymentTimesChart from './Order Payment Times/orderPaymentTimes.jsx';
-import OrderPaymentTimesChart27 from './Order Payment Times/orderPaymentTimes27.jsx';
-import OrderPaymentTimesChart28 from './Order Payment Times/orderPaymentTimes28.jsx';
-import OrderPaymentTimesChart97 from './Order Payment Times/orderPaymentTimes97.jsx';
-import OrderPaymentTimesChart98 from './Order Payment Times/orderPaymentTimes98.jsx';
-import OrderPaymentTimesChart99 from './Order Payment Times/orderPaymentTimes99.jsx';
+import OrderPaymentTimesStats from './Order Payment Times/orderPaymentTimes.jsx';
+import OrderPaymentTimesStats27 from './Order Payment Times/orderPaymentTimes27.jsx';
+import OrderPaymentTimesStats28 from './Order Payment Times/orderPaymentTimes28.jsx';
+import OrderPaymentTimesStats97 from './Order Payment Times/orderPaymentTimes97.jsx';
+import OrderPaymentTimesStats98 from './Order Payment Times/orderPaymentTimes98.jsx';
+import OrderPaymentTimesStats99 from './Order Payment Times/orderPaymentTimes99.jsx';
 import BusiestHoursChart from './Busiest Hours/busiestHours.jsx';
 import BusiestHoursChart27 from './Busiest Hours/busiestHours27.jsx';
 import BusiestHoursChart28 from './Busiest Hours/busiestHours28.jsx';
@@ -39,27 +39,27 @@ import AveragePaymentTimeByHourChart99 from './Payment Time By Hour/averagePayme
 
 
 const App = () => {
-  const [selectedCharts, setSelectedCharts] = useState([<WaitTimeChart/>, <TotalTimesStats/>, <BusiestHoursChart/>, <OrderPaymentTimesChart/>, <AverageWaitTimeByHourChart/>,<AveragePaymentTimeByHourChart/>]);
+  const [selectedCharts, setSelectedCharts] = useState([<WaitTimeStatistics/>, <TotalTimesStats/>, <BusiestHoursChart/>, <OrderPaymentTimesStats/>, <AverageWaitTimeByHourChart/>,<AveragePaymentTimeByHourChart/>]);
 
-  const renderCharts = (chartComponents) => {
-    setSelectedCharts(chartComponents);
+  const renderCharts = (components) => {
+    setSelectedCharts(components);
   };
 
   const handleSelect = (event) => {
     const chartNames = event.target.value.split(',');
-    const chartComponents = chartNames.map(chartName => {
+    const components = chartNames.map(chartName => {
       switch (chartName) {
-        case 'waitTime':
-          return <WaitTimeChart key={chartName} />;
-        case 'waitTime27':
+        case 'WaitTime':
+          return <WaitTimeStatistics key={chartName} />;
+        case 'WaitTime27':
           return <WaitTimeStatistics27 key={chartName} />;
-        case 'waitTime28':
+        case 'WaitTime28':
           return <WaitTimeStatistics28 key={chartName} />;
-          case 'waitTime97':
+          case 'WaitTime97':
           return <WaitTimeStatistics97 key={chartName} />;
-        case 'waitTime98':
+        case 'WaitTime98':
           return <WaitTimeStatistics98 key={chartName} />;
-        case 'waitTime99':
+        case 'WaitTime99':
           return <WaitTimeStatistics99 key={chartName} />;
 
         case 'TotalTimesStats':
@@ -88,18 +88,18 @@ const App = () => {
         case 'BusiestHoursChart99':
           return <BusiestHoursChart99 key={chartName} />;
 
-        case 'OrderPaymentTimesChart':
-          return <OrderPaymentTimesChart key={chartName} />;
-        case 'OrderPaymentTimesChart27':
-          return <OrderPaymentTimesChart27 key={chartName} />;
-        case 'OrderPaymentTimesChart28':
-          return <OrderPaymentTimesChart28 key={chartName} />;
-          case 'OrderPaymentTimesChart97':
-          return <OrderPaymentTimesChart97 key={chartName} />;
-        case 'OrderPaymentTimesChart98':
-          return <OrderPaymentTimesChart98 key={chartName} />;
-        case 'OrderPaymentTimesChart99':
-          return <OrderPaymentTimesChart99 key={chartName} />;
+        case 'OrderPaymentStatsChart':
+          return <OrderPaymentTimesStats key={chartName} />;
+        case 'OrderPaymentTimesStats27':
+          return <OrderPaymentTimesStats27 key={chartName} />;
+        case 'OrderPaymentTimesStats28':
+          return <OrderPaymentTimesStats28 key={chartName} />;
+          case 'OrderPaymentTimesStats97':
+          return <OrderPaymentTimesStats97 key={chartName} />;
+        case 'OrderPaymentTimesStats98':
+          return <OrderPaymentTimesStats98 key={chartName} />;
+        case 'OrderPaymentTimesStats99':
+          return <OrderPaymentTimesStats99 key={chartName} />;
 
         case 'AverageWaitTimeByHourChart':
           return <AverageWaitTimeByHourChart key={chartName} />;
@@ -130,7 +130,7 @@ const App = () => {
           return null;
       }
     });
-    renderCharts(chartComponents);
+    renderCharts(components);
   };
 
 
@@ -138,12 +138,12 @@ const App = () => {
     <div>
       <h1>Hellometer Data Analysis</h1>
       <select onChange={handleSelect}>
-        <option value="waitTime,TotalTimesStats,OrderPaymentTimesChart,AverageWaitTimeByHourChart,AveragePaymentTimeByHourChart">Across All Stores</option>
-        <option value="waitTime27,TotalTimesStats27,BusiestHoursChart27,OrderPaymentTimesChart27,AverageWaitTimeByHourChart27,AveragePaymentTimeByHourChart27">Store 27</option>
-        <option value="waitTime28,TotalTimesStats28,BusiestHoursChart28,OrderPaymentTimesChart28,AverageWaitTimeByHourChart28,AveragePaymentTimeByHourChart28">Store 28</option>
-        <option value="waitTime97,TotalTimesStats97,BusiestHoursChart97,OrderPaymentTimesChart97,AverageWaitTimeByHourChart97,AveragePaymentTimeByHourChart97">Store 97</option>
-        <option value="waitTime98,TotalTimesStats98,BusiestHoursChart98,OrderPaymentTimesChart98,AverageWaitTimeByHourChart98,AveragePaymentTimeByHourChart98">Store 98</option>
-        <option value="waitTime99,TotalTimesStats99,BusiestHoursChart99,OrderPaymentTimesChart99,AverageWaitTimeByHourChart99,AveragePaymentTimeByHourChart99">Store 99</option>
+        <option value="WaitTime,TotalTimesStats,OrderPaymentTimesChart,AverageWaitTimeByHourChart,AveragePaymentTimeByHourChart">Across All Stores</option>
+        <option value="WaitTime27,TotalTimesStats27,BusiestHoursChart27,OrderPaymentTimesStats27,AverageWaitTimeByHourChart27,AveragePaymentTimeByHourChart27">Store 27</option>
+        <option value="WaitTime28,TotalTimesStats28,BusiestHoursChart28,OrderPaymentTimesStats28,AverageWaitTimeByHourChart28,AveragePaymentTimeByHourChart28">Store 28</option>
+        <option value="WaitTime97,TotalTimesStats97,BusiestHoursChart97,OrderPaymentTimesStats97,AverageWaitTimeByHourChart97,AveragePaymentTimeByHourChart97">Store 97</option>
+        <option value="WaitTime98,TotalTimesStats98,BusiestHoursChart98,OrderPaymentTimesStats98,AverageWaitTimeByHourChart98,AveragePaymentTimeByHourChart98">Store 98</option>
+        <option value="WaitTime99,TotalTimesStats99,BusiestHoursChart99,OrderPaymentTimesStats99,AverageWaitTimeByHourChart99,AveragePaymentTimeByHourChart99">Store 99</option>
       </select>
       <div>
         {selectedCharts}

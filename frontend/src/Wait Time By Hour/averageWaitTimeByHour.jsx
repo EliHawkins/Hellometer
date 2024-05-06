@@ -44,7 +44,7 @@ const AverageWaitTimeByHourChart = () => {
 
   return (
     <div>
-      <h2>Average Wait Time by Hour of the Day Chart</h2>
+      <h2>Average Wait Time by Hour of the Day Across All Stores Chart</h2>
       <canvas id="averageWaitTimeByHourChart" width="400" height="400"></canvas>
     </div>
   );

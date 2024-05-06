@@ -12,7 +12,7 @@ const WaitTimeStatistics = () => {
 
   return (
     <div>
-      <h2>Wait Time Statistics</h2>
+      <h2>Wait Time Across All Stores Statistics</h2>
       <ul>
         <li>Average: {waitTimes.average !== undefined ? waitTimes.average.toFixed(2) : 'N/A'}</li>
         <li>Median: {waitTimes.median !== undefined ? waitTimes.median.toFixed(2) : 'N/A'}</li>
