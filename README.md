@@ -26,12 +26,14 @@ pip install Flask
 ```
 To start the development server for the backend, navigate to the backend directory 
 
-```cd hellometer-backend
+```
+cd hellometer-backend
 ```
 
 and use the following command:
 
-```python app.py
+```
+python app.py
 ```
 
 This will start the backend server. Make sure to have Python installed on your machine.
@@ -41,12 +43,14 @@ Make sure to start both the frontend and backend servers to use the full functio
 ### Frontend
 For best experience, view in developer mode! To start the development server for the frontend, navigate to the frontend directory 
 
-```cd hellometer-frontend
+```
+cd hellometer-frontend
 ```
 
 and use the following command:
 
-```npm start
+```
+npm start
 ```
 
 This will start the frontend server and open the project in your default web browser.
