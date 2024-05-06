@@ -37,46 +37,117 @@ import AveragePaymentTimeByHourChart98 from './Payment Time By Hour/averagePayme
 import AveragePaymentTimeByHourChart99 from './Payment Time By Hour/averagePaymentTimeByHour99.jsx';
 
 
+
 const App = () => {
+  const [selectedCharts, setSelectedCharts] = useState([<WaitTimeChart/>, <TotalTimesStats/>, <BusiestHoursChart/>, <OrderPaymentTimesChart/>, <AverageWaitTimeByHourChart/>,<AveragePaymentTimeByHourChart/>]);
+
+  const renderCharts = (chartComponents) => {
+    setSelectedCharts(chartComponents);
+  };
+
+  const handleSelect = (event) => {
+    const chartNames = event.target.value.split(',');
+    const chartComponents = chartNames.map(chartName => {
+      switch (chartName) {
+        case 'waitTime':
+          return <WaitTimeChart key={chartName} />;
+        case 'waitTime27':
+          return <WaitTimeStatistics27 key={chartName} />;
+        case 'waitTime28':
+          return <WaitTimeStatistics28 key={chartName} />;
+          case 'waitTime97':
+          return <WaitTimeStatistics97 key={chartName} />;
+        case 'waitTime98':
+          return <WaitTimeStatistics98 key={chartName} />;
+        case 'waitTime99':
+          return <WaitTimeStatistics99 key={chartName} />;
+
+        case 'TotalTimesStats':
+          return <TotalTimesStats key={chartName} />;
+        case 'TotalTimesStats27':
+          return <TotalTimesStats27 key={chartName} />;
+        case 'TotalTimesStats28':
+          return <TotalTimesStats28 key={chartName} />;
+          case 'TotalTimesStats97':
+          return <TotalTimesStats97 key={chartName} />;
+        case 'TotalTimesStats98':
+          return <TotalTimesStats98 key={chartName} />;
+        case 'TotalTimesStats99':
+          return <TotalTimesStats99 key={chartName} />;
+
+        case 'BusiestHoursChart':
+          return <BusiestHoursChart key={chartName} />;
+        case 'BusiestHoursChart27':
+          return <BusiestHoursChart27 key={chartName} />;
+        case 'BusiestHoursChart28':
+          return <BusiestHoursChart28 key={chartName} />;
+          case 'BusiestHoursChart97':
+          return <BusiestHoursChart97 key={chartName} />;
+        case 'BusiestHoursChart98':
+          return <BusiestHoursChart98 key={chartName} />;
+        case 'BusiestHoursChart99':
+          return <BusiestHoursChart99 key={chartName} />;
+
+        case 'OrderPaymentTimesChart':
+          return <OrderPaymentTimesChart key={chartName} />;
+        case 'OrderPaymentTimesChart27':
+          return <OrderPaymentTimesChart27 key={chartName} />;
+        case 'OrderPaymentTimesChart28':
+          return <OrderPaymentTimesChart28 key={chartName} />;
+          case 'OrderPaymentTimesChart97':
+          return <OrderPaymentTimesChart97 key={chartName} />;
+        case 'OrderPaymentTimesChart98':
+          return <OrderPaymentTimesChart98 key={chartName} />;
+        case 'OrderPaymentTimesChart99':
+          return <OrderPaymentTimesChart99 key={chartName} />;
+
+        case 'AverageWaitTimeByHourChart':
+          return <AverageWaitTimeByHourChart key={chartName} />;
+        case 'AverageWaitTimeByHourChart27':
+          return <AverageWaitTimeByHourChart27 key={chartName} />;
+        case 'AverageWaitTimeByHourChart28':
+          return <AverageWaitTimeByHourChart28 key={chartName} />;
+          case 'AverageWaitTimeByHourChart97':
+          return <AverageWaitTimeByHourChart97 key={chartName} />;
+        case 'AverageWaitTimeByHourChart98':
+          return <AverageWaitTimeByHourChart98 key={chartName} />;
+        case 'AverageWaitTimeByHourChart99':
+          return <AverageWaitTimeByHourChart99 key={chartName} />;
+
+        case 'AveragePaymentTimeByHourChart':
+          return <AveragePaymentTimeByHourChart key={chartName} />;
+        case 'AveragePaymentTimeByHourChart27':
+          return <AveragePaymentTimeByHourChart27 key={chartName} />;
+        case 'AveragePaymentTimeByHourChart28':
+          return <AveragePaymentTimeByHourChart28 key={chartName} />;
+          case 'AveragePaymentTimeByHourChart97':
+          return <AveragePaymentTimeByHourChart97 key={chartName} />;
+        case 'AveragePaymentTimeByHourChart98':
+          return <AveragePaymentTimeByHourChart98 key={chartName} />;
+        case 'AveragePaymentTimeByHourChart99':
+          return <AveragePaymentTimeByHourChart99 key={chartName} />;
+        default:
+          return null;
+      }
+    });
+    renderCharts(chartComponents);
+  };
+
+
   return (
     <div>
       <h1>Hellometer Data Analysis</h1>
-      <WaitTimeChart/>
-      <WaitTimeStatistics27/>
-      <WaitTimeStatistics28/>
-      <WaitTimeStatistics97/>
-      <WaitTimeStatistics98/>
-      <WaitTimeStatistics99/>
-      <TotalTimesStats/>
-      <TotalTimesStats27/>
-      <TotalTimesStats28/>
-      <TotalTimesStats97/>
-      <TotalTimesStats98/>
-      <TotalTimesStats99/>
-      <OrderPaymentTimesChart/>
-      <OrderPaymentTimesChart27/>
-      <OrderPaymentTimesChart28/>
-      <OrderPaymentTimesChart97/>
-      <OrderPaymentTimesChart98/>
-      <OrderPaymentTimesChart99/>
-      <BusiestHoursChart/>
-      <BusiestHoursChart27/>
-      <BusiestHoursChart28/>
-      <BusiestHoursChart97/>
-      <BusiestHoursChart98/>
-      <BusiestHoursChart99/>
-      <AverageWaitTimeByHourChart/>
-      {/*  <AverageWaitTimeByHourChart27/>
-      <AverageWaitTimeByHourChart28/>
-      <AverageWaitTimeByHourChart97/>
-      <AverageWaitTimeByHourChart98/>
-      <AverageWaitTimeByHourChart99/>
-      <AveragePaymentTimeByHourChart/>
-      <AveragePaymentTimeByHourChart27/>
-      <AveragePaymentTimeByHourChart28/>
-      <AveragePaymentTimeByHourChart97/>
-      <AveragePaymentTimeByHourChart98/>
-      <AveragePaymentTimeByHourChart99/> */}
+      <select onChange={handleSelect}>
+        <option value="waitTime,TotalTimesStats,OrderPaymentTimesChart,AverageWaitTimeByHourChart,AveragePaymentTimeByHourChart">Across All Stores</option>
+        <option value="waitTime27,TotalTimesStats27,BusiestHoursChart27,OrderPaymentTimesChart27,AverageWaitTimeByHourChart27,AveragePaymentTimeByHourChart27">Store 27</option>
+        <option value="waitTime28,TotalTimesStats28,BusiestHoursChart28,OrderPaymentTimesChart28,AverageWaitTimeByHourChart28,AveragePaymentTimeByHourChart28">Store 28</option>
+        <option value="waitTime97,TotalTimesStats97,BusiestHoursChart97,OrderPaymentTimesChart97,AverageWaitTimeByHourChart97,AveragePaymentTimeByHourChart97">Store 97</option>
+        <option value="waitTime98,TotalTimesStats98,BusiestHoursChart98,OrderPaymentTimesChart98,AverageWaitTimeByHourChart98,AveragePaymentTimeByHourChart98">Store 98</option>
+        <option value="waitTime99,TotalTimesStats99,BusiestHoursChart99,OrderPaymentTimesChart99,AverageWaitTimeByHourChart99,AveragePaymentTimeByHourChart99">Store 99</option>
+      </select>
+      <div>
+        {selectedCharts}
+      </div>
     </div>
   );
 };
